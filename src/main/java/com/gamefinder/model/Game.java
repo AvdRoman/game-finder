@@ -6,8 +6,7 @@ public class Game {
     private double rating;
     private String backgroundImage;
 
-    public Game() {
-    }
+    public Game() {}
 
     public Game(String name, String released, double rating, String backgroundImage) {
         setName(name);
