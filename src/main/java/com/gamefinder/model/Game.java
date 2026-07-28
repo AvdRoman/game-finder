@@ -16,9 +16,11 @@ public class Game {
     }
 
     public void setName(String name) {
-        if (name == null || name.trim().isEmpty())
-            throw new IllegalArgumentException("Название игры не может быть пустым");
-        this.name = name;
+        if (name == null || name.isBlank() || "null".equalsIgnoreCase(name)) {
+            this.name = "Неизвестно";
+        } else {
+            this.name = name;
+        }
     }
 
     public String getName() {
@@ -26,9 +28,11 @@ public class Game {
     }
 
     public void setReleased(String released) {
-        if (released != null && released.trim().isEmpty())
-            throw new IllegalArgumentException("Дата выхода не может быть пустой");
-        this.released = released;
+        if (released == null || released.isBlank() || "null".equalsIgnoreCase(released)) {
+            this.released = "Дата не указана";
+        } else {
+            this.released = released;
+        }
     }
 
     public String getReleased() {
@@ -36,9 +40,14 @@ public class Game {
     }
 
     public void setRating(double rating) {
-        if (rating < 0 || rating > 5)
-            throw new IllegalArgumentException("Рейтинг должен быть от 0 до 5");
-        this.rating = rating;
+        // Вместо выброса ошибки ограничиваем значение от 0.0 до 5.0
+        if (rating < 0) {
+            this.rating = 0.0;
+        } else if (rating > 5) {
+            this.rating = 5.0;
+        } else {
+            this.rating = rating;
+        }
     }
 
     public double getRating() {
@@ -46,7 +55,11 @@ public class Game {
     }
 
     public void setBackgroundImage(String backgroundImage) {
-        this.backgroundImage = backgroundImage;
+        if (backgroundImage == null) {
+            this.backgroundImage = "";
+        } else {
+            this.backgroundImage = backgroundImage.trim();
+        }
     }
 
     public String getBackgroundImage() {
