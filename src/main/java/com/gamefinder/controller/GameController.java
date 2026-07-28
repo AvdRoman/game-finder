@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets; //Кодировка UTF-8, чтобы
 
 public class GameController implements HttpHandler {
 
+    @Override
     public void handle(HttpExchange exchange) throws IOException { //принимает объект с запросом и ответом
 
         String response = "{\"message\": \"GameController работает\"}"; //json ответ
