@@ -7,7 +7,22 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Game Finder</h1>
+    <header>
+        <h1>Game Finder</h1>
+        <p>Найди свою игру</p>
+    </header>
+    <main>
+        <section class="search-section">
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Введите название..." required>
+                <button type="submit">Найти</button>
+            </form>
+        </section>
+
+        <section id="game-container">
+            <!-- Место для карточек с играми -->
+        </section>
+    </main>
 
     <script src="js/script.js"></script>
 </body>
