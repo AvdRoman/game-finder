@@ -7,6 +7,7 @@ public class AppConfig {
     public static final int PORT = 8080;
     public static final String RAWG_API_URL = "https://api.rawg.io/api/games";
     public static final int PAGE_SIZE = 20;
+    public static final int CACHE_TTL_MINUTES = 5;
     public static final String RAWG_API_KEY = System.getenv("RAWG_API_KEY");
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AppConfig.class);
